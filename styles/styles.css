@@ -6,9 +6,10 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color:white;
+  background-color: white;
   color: #050505;
-  min-height: 100vh;/* Es ideal para crear secciones o "bloques" de contenido que ocupen toda la altura de la pantalla, como una hero section (la primera sección de una página web con una imagen o video grande y texto destacado) */
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .encabezado {
@@ -26,11 +27,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo {
   width: 90px;
   height: auto;
+  max-width: 100%;
 }
 
 .texto-acceso {
@@ -48,6 +51,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   max-width: 650px;
+  width: 100%;
   gap: 20px;
   text-align: left;
 }
@@ -57,6 +61,7 @@ body {
   font-weight: 800;
   line-height: 1.1;
   text-align: left;
+  word-wrap: break-word;
 }
 
 .descripcion {
@@ -68,15 +73,16 @@ body {
 }
 
 .boton {
-  background-color:#00FFAD;
+  background-color: #00FFAD;
   padding: 10px 24px;
   font-size: 13px;
   color: black;
   border-radius: 20px;
   width: fit-content;
-  font-weight: 600;/*En tipografía, el peso de la fuente (font weight) se refiere a qué tan "oscuro" o grueso se ve un carácter.*/
+  font-weight: 600;
   margin-top: 10px;
 }
+
 .seccion-principal {
   padding: 80px 40px;
   background-color: white;
@@ -92,22 +98,24 @@ body {
 
 .contenedor-imagenes {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
-  justify-content: space-between;
   gap: 80px;
+  width: 100%;
 }
 
 .imagen-principal {
-  flex: 1 3 280px;
+  flex: 1 1 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  max-width: 300px;
 }
 
 .imagen-principal img {
   width: 100px;
+  max-width: 100%;
   height: auto;
   margin-bottom: 15px;
 }
@@ -125,15 +133,12 @@ body {
   max-width: 260px;
 }
 
-
 .blanco {
   margin: 9% 0%;
-    background: linear-gradient(-10deg, #00FFAD 60%, white 60%);
-    height: 100vh;
-    padding:50px;
+  background: linear-gradient(-10deg, #00FFAD 60%, white 60%);
+  min-height: 100vh;
+  padding: 50px;
 }
-
-
 
 .contenido-diagonal {
   display: flex;
@@ -149,6 +154,7 @@ body {
   flex: 1;
   max-width: 500px;
   color: #0d0d0d;
+  text-align: left;
 }
 
 .texto-diagonal h2 {
@@ -184,9 +190,9 @@ body {
 }
 
 .precios {
-  padding: 60px 0px 100px 0px;
+  padding: 60px 20px 100px 20px;
   text-align: center;
-  background-color:white;
+  background-color: white;
 }
 
 .titulo-precios {
@@ -204,13 +210,11 @@ body {
 
 .tarjeta {
   background-color: #f9f9f9;
-  padding: 50px 50px ;
+  padding: 50px 50px;
   border-radius: 5px;
   width: 280px;
   text-align: center;
-  
 }
-
 
 .tarjeta.activa {
   background-color: #0d112f;
@@ -257,87 +261,93 @@ body {
   color: black;
   border: none;
 }
-.patrocinadores{
+
+.patrocinadores {
   background-color: #EDEEF0;
-  display:flex;
-justify-content: center;
-justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px 10px;
 }
+
+.patrocinadores img {
+  max-width: 150px;
+  height: auto;
+}
+
 .subfooter {
   background: linear-gradient( rgba(30, 30, 60, 0.29)), url(../assets/Imagenes/images/contact-bk.jpg) no-repeat center center/cover;
   color: white;
   padding: 50px 90px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   gap: 30px;
 }
 
 .formulario {
-    padding: 0px;
-    background-color: transparent;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 600px;
-
+  padding: 0px;
+  background-color: transparent;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
 }
 
 .forms {
-    color: #00f5c3;
-    margin-bottom: 5px;
+  color: #00f5c3;
+  margin-bottom: 5px;
 }
 
-
 .pequeño {
-    width: 100%;
-    padding: 50px;
-    height: 60%;
-    margin-bottom: 20px;
-    border: 2px solid #00f5c3;
-    border-radius: 6px;
-    background-color: transparent;
-    color: white;
+  width: 100%;
+  padding: 50px;
+  height: 60%;
+  margin-bottom: 20px;
+  border: 2px solid #00f5c3;
+  border-radius: 6px;
+  background-color: transparent;
+  color: white;
 }
 
 .grande {
-    width: 100%;
-    height: 100px;
-    padding: 10px;
-    border: 2px solid #00f5c3;
-    border-radius: 6px;
-    background-color: transparent;
-    color: white;
-    resize: none;
-    margin-bottom: 20px;
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 2px solid #00f5c3;
+  border-radius: 6px;
+  background-color: transparent;
+  color: white;
+  resize: none;
+  margin-bottom: 20px;
 }
 
 .dobleinput {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .input1,
 .input2 {
-    flex: 1;
+  flex: 1;
 }
 
 .submit {
-    width: 100%;
-    padding: 15px 0;
-    border: none;
-    border-radius: 25px;
-    background: #00f5c3;
-    color: #192440;
-    font-weight: bold;
+  width: 100%;
+  padding: 15px 0;
+  border: none;
+  border-radius: 25px;
+  background: #00f5c3;
+  color: #192440;
+  font-weight: bold;
 }
 
 .input-transparente {
-    background-color: transparent;
-    border: 1px solid #00FFAD;
-    color: #00FFAD;
-    padding: 10px;
-    outline: none;
-    border-radius: 3px;
+  background-color: transparent;
+  border: 1px solid #00FFAD;
+  color: #00FFAD;
+  padding: 10px;
+  outline: none;
+  border-radius: 3px;
 }
 
 .contacto {
@@ -389,7 +399,6 @@ justify-content: space-around;
   padding: 12px;
   border-radius: 20px;
   cursor: pointer;
- 
 }
 
 .formulario-contacto button:hover {
@@ -419,4 +428,91 @@ justify-content: space-around;
 .redes-sociales i {
   font-size: 18px;
   color: white;
+}
+
+@media (max-width: 1279px) {
+  .titulo {
+    font-size: 65px;
+  }
+  .contenedor-imagenes {
+    gap: 70px;/*El uso de gap en CSS es principalmente para controlar el espacio entre las filas y columnas*/
+  }
+}
+
+@media (max-width: 920px) {
+  .titulo {
+    font-size: 55px;
+  }
+  .contenedor-imagenes {
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  .contenido-diagonal {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 45px;
+    text-align: center;
+  }
+  .contenido {
+    align-items: center;
+    text-align: center;
+  }
+  .contenedor-imagenes {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .tarjetas-precios {
+    flex-direction: column;
+    align-items: center;
+  }
+  .patrocinadores {
+    gap: 20px;
+  }
+  .subfooter {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .contacto {
+    text-align: center;
+  }
+  .formulario-contacto {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .encabezado {
+    padding: 20px;
+    text-align: center;
+  }
+  .titulo {
+    font-size: 32px;
+  }
+  .descripcion {
+    font-size: 14px;
+  }
+  .contenedor-imagenes {
+    gap: 30px;
+  }
+  .imagen-principal img {
+    width: 80px;
+  }
+  .tarjetas-precios {
+    gap: 20px;
+  }
+  .patrocinadores img {
+    max-width: 120px;
+  }
+  .pie-pagina {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
 }
